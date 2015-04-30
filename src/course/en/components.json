@@ -25,9 +25,9 @@
         "_component":"text",
         "_classes":"",
         "_layout":"left",
-        "title":"How Open Data becomes Sustainable",
-        "displayTitle":"How Open Data becomes Sustainable",
-        "body":"<p>In this module, participants will think about the longer-term objectives of their open data Initiative and how to sustain their approach to data publishing over time </p><h5>Outcomes</h5><ul class='ticks'><li>Understand the necessary requirements to have a sustainable open data culture</li></ul>",
+        "title":"Assessing Data Usability",
+        "displayTitle":"Assessing Data Usability",
+        "body":"<p>In this module we examine in detail the first three stars of the five stars of linked open data. We give examples of the application of each one and explain the key benefits. We then introduce Open Data Certificates and reinforce the role of machine readable metadata and licences. We look at tools like enigma.io and how adding links can help in the discovery of data. We also get practical and demonstrate how people can use Google to discover data, and examine where it has been used. Once the portal has been finalised, we will look at the ODPP project: we will provide a guide to the portal and explore how it will support effective data publishing and reuse </p><h5>Outcomes</h5><ul class='ticks'><li>Understand ​the key methods used for publishing data on the web and how to discover this data.</li><li>Understand the tools to help you add value to your data and make it more usable and discoverable.</li></ul>",
         "_pageLevelProgress": {
             "_isEnabled": true
         }
