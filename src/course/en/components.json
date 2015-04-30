@@ -25,9 +25,9 @@
         "_component":"text",
         "_classes":"",
         "_layout":"left",
-        "title":"How Open Data becomes Sustainable",
-        "displayTitle":"How Open Data becomes Sustainable",
-        "body":"<p>In this module, participants will think about the longer-term objectives of their open data Initiative and how to sustain their approach to data publishing over time </p><h5>Outcomes</h5><ul class='ticks'><li>Understand the necessary requirements to have a sustainable open data culture</li></ul>",
+        "title":"Surfing the Web of Data",
+        "displayTitle":"Surfing the Web of Data",
+        "body":"<p>This module explores the role of linked data and the importance of web based identifiers in managing data overload. We explore the links between the physical and digital world and look at how the internet of things is th​ th​ evolving. In the process we examine the 4​and 5​stars of linked open data</p><h5>Outcomes</h5><ul class='ticks'><li>To understand the principle of web based identifiers and how they can be used</li></ul>",
         "_pageLevelProgress": {
             "_isEnabled": true
         }
