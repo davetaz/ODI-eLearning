@@ -25,9 +25,9 @@
         "_component":"text",
         "_classes":"",
         "_layout":"left",
-        "title":"How Open Data becomes Sustainable",
-        "displayTitle":"How Open Data becomes Sustainable",
-        "body":"<p>In this module, participants will think about the longer-term objectives of their open data Initiative and how to sustain their approach to data publishing over time </p><h5>Outcomes</h5><ul class='ticks'><li>Understand the necessary requirements to have a sustainable open data culture</li></ul>",
+        "title":"Choosing the Right Format for Open Data",
+        "displayTitle":"Choosing the Right Format for Open Data",
+        "body":"<p>We explore the various techniques to publish a dataset and the advantages and disadvantages of each. We will specifically focus on publishing in a CSV format and introduce tools to help manage CSV projects.</p><h5>Outcomes</h5><ul class='ticks'><li>Understand the benefits and uses of publishing data in CSV format.</li></ul>",
         "_pageLevelProgress": {
             "_isEnabled": true
         }
