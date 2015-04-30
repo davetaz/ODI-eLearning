@@ -25,9 +25,9 @@
         "_component":"text",
         "_classes":"",
         "_layout":"left",
-        "title":"How Open Data becomes Sustainable",
-        "displayTitle":"How Open Data becomes Sustainable",
-        "body":"<p>In this module, participants will think about the longer-term objectives of their open data Initiative and how to sustain their approach to data publishing over time </p><h5>Outcomes</h5><ul class='ticks'><li>Understand the necessary requirements to have a sustainable open data culture</li></ul>",
+        "title":"Excavating Hidden Data",
+        "displayTitle":"Excavating Hidden Data",
+        "body":"<p>In this module we introduce a few of the more advanced methods for finding data “in the web” and demonstrate how to understand and exploit it. We also explore beyond CSV and introduce JSON; the increasingly dominant format for data \"in the web\"</p><h5>Outcomes</h5><ul class='ticks'><li>UUnderstand the principles of data “in the web” and how to exploit it.</li></ul>",
         "_pageLevelProgress": {
             "_isEnabled": true
         }
