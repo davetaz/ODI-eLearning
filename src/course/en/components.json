@@ -25,9 +25,9 @@
         "_component":"text",
         "_classes":"",
         "_layout":"left",
-        "title":"Adapt template for the Open Data Instititute",
-        "displayTitle":"Adapt template for the Open Data Instititute",
-        "body":"<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation.</p><h5>Learning objectives</h5><ul class='ticks'><li>Lorem ipsum dolor sit amet, consectetur</li><li>Consectetur adipisicing elit, sed do eiusmod tempor incididunt commodo consequat</li><li>Et dolore magna aliqua. Ut enim ad met</li><li>Exercitation ullamco laboris nisi ut aliquip ex ea</li><li>Sit amet, consectetur</li></ul>",
+        "title":"Getting to grips with Open Data platforms",
+        "displayTitle":"Getting to grips with Open Data platforms",
+        "body":"<p>Data publishing platforms have proliferated over the past few years. This module helps publishers understand the evolution of these platforms and the reasons for their development. This will help inform the users choice on which platform to choose and how to make best use of each platform’s capabilities in their own environments.</p><h5>Learning objectives</h5><ul class='ticks'><li>To enable users to understand the pros and cons of open data publishing platforms and their capabilities.</li></ul>",
         "instruction":"",
         "_pageLevelProgress": {
             "_isEnabled": true
