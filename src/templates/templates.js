@@ -817,6 +817,32 @@ function program12(depth0,data) {
   return buffer;
   });
 
+this["Handlebars"]["templates"]["responsiveIframe"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "\n<div class=\"component-inner responsiveIframe-inner\">\n  <div class=\"component-widget responsiveIframe-widget\">\n    <div class=\"responsiveIframe-iframe-holder\">\n      <iframe scrolling=\"no\" class=\"responsiveIframe-iframe\" src=\"";
+  if (helper = helpers._source) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0._source); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "\"\n        data-height-large=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0._height)),stack1 == null || stack1 === false ? stack1 : stack1._large)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" data-height-medium=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0._height)),stack1 == null || stack1 === false ? stack1 : stack1._medium)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" data-height-small=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0._height)),stack1 == null || stack1 === false ? stack1 : stack1._small)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"\n        data-width-large=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0._width)),stack1 == null || stack1 === false ? stack1 : stack1._large)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" data-width-medium=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0._width)),stack1 == null || stack1 === false ? stack1 : stack1._medium)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" data-width-small=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0._width)),stack1 == null || stack1 === false ? stack1 : stack1._small)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">\n      </iframe>\n    </div>\n  </div>\n</div>";
+  return buffer;
+  });
+
 this["Handlebars"]["templates"]["slider"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};

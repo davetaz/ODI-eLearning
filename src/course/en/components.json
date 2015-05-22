@@ -18,6 +18,7 @@
             "small": "course/en/images/example-odi-rotated.png"
         }
     },
+
     {
         "_id":"c-01",
         "_parentId":"b-01",
@@ -31,6 +32,86 @@
         "instruction":"",
         "_pageLevelProgress": {
             "_isEnabled": true
+        }
+    },
+    {
+        "_id":"c-122",
+        "_parentId":"b-04",
+        "_type":"component",
+        "_component":"text",
+        "_classes":"",
+        "_layout":"right",
+        "title":"Text and embedded d3",
+        "displayTitle":"Text and embedded d3",
+        "body":"This is a demo of a compoentent with a load of text and an embedded webpage."
+    },
+    {
+        "_id":"c-106",
+        "_parentId":"b-04",
+        "_type":"component",
+        "_component":"responsiveIframe",
+        "_classes":"",
+        "_layout":"left",
+        "title":"Hello",
+        "displayTitle": "Embed example",
+        "body": "Over here",
+        "_source": "course/en/dynamic/graph1.html",
+        "_width": {
+            "_small" : "100%",
+            "_medium" : "100%",
+            "_large" : "100%"
+        },
+        "_height": {
+            "_small" : 400,
+            "_medium" : 400,
+            "_large" : 550
+        }
+    },
+    {
+          "_id": "c-105",
+          "_parentId":"b-05",
+          "_classes": "",
+          "_type":"component",
+          "_component": "hotgraphic",
+          "_layout": "full",
+          "title": "Hotgraphic example",
+          "displayTitle": "Hotgraphic example",
+          "body": "Here is an example of a hotgraphic component. Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliq.",
+          "mobileBody": "",
+          "instruction":"<em>Click on the pins to learn more information.</em>",
+          "_graphic": {
+            "src": "http://placehold.it/900x530",
+            "alt": "",
+            "title": ""
+          },
+          "_items": [
+            {
+                "title": "Example 1",
+                "body": "Example 1 lorem ipsum",
+                "_graphic": {
+                    "src": "http://placehold.it/400x270",
+                    "alt": "Lorem ipsum",
+                    "title": "Lorem ipsum"
+                },
+                "strapline": "Example 1",
+                "_top": 40,
+                "_left": 10
+            },
+            {
+                "title": "Example 2",
+                "body": "Example 2 lorem ipsum",
+                "_graphic": {
+                    "src": "http://placehold.it/400x270",
+                    "alt": "Lorem ipsum",
+                    "title": "Lorem ipsum"
+                },
+                "strapline": "Example 2",
+                "_top": 40,
+                "_left": 60
+            }
+        ],
+        "_pageLevelProgress": {
+          "_isEnabled": true
         }
     },
     {
