@@ -1,303 +1,84 @@
-function genderChart() {
-    var data = [
-        {key: "Male", y: 50},
-        {key: "Female", y: 40},
-	{key: "Prefer not to say", y: 10}
-    ];
-    addPie(data,"gender_chart");
-    $(window).trigger('resize');
-}
+$(document).ready(function () {
 
-function addPie(data,element) {
+var margin = {top: 60, right: 30, bottom: 40, left: 70};
 var w = window,
     d = document,
     e = d.documentElement,
     g = d.getElementsByTagName('body')[0],
     x = w.innerWidth || e.clientWidth || g.clientWidth,
     y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-    width = x;
-    height = y;
-    nv.addGraph(function() {
-        var chart = nv.models.pieChart()
-            .x(function(d) { return d.key })
-            .y(function(d) { return d.y })
-            .width(width)
-            .height(height)
-	        .showLabels(true)
-	        .labelType("percent")
-	       .color(["#1F77B4","#AEC7E8","#BDBDBD"]);
+    width = x - margin.left - margin.right;
+    height = y - margin.top - margin.bottom;
+//      width = 100%;
+//      height = 100%;
+//    width = 450 - margin.left - margin.right,
+//    height = 300 - margin.top - margin.bottom;
 
-        d3.select("#" + element)
-            .datum(data)
-            .transition().duration(1200)
-            .attr('width', width)
-            .attr('height', height)
-            .call(chart);
+var formatPercent = d3.format(".0%");
 
-        nv.utils.windowResize(chart.update);
-        return chart;
-    });
-}
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1, .55);
 
-function ageBar() {
-          
-     data = [
-        {
-            key: "Ages",
-            values: [
-                {
-                    "label" : "16-24" ,
-                    "value" : 0
-                } ,
-                {
-                    "label" : "25-34" ,
-                    "value" : 0.1
-                } ,
-                {
-                    "label" : "35-44" ,
-                    "value" : 0.70
-                } ,
-                {
-                    "label" : "45-54" ,
-                    "value" : 0
-                } ,
-                {
-                    "label" : "55-64" ,
-                    "value" : 0.10
-                } ,
-                {
-                    "label" : "Prefer not to say" ,
-                    "value" : 0.10
-                }
-		
-	    ]
-	}
-     ];
+var y = d3.scale.linear()
+    .range([height, 0]);
 
-     addBar(data,"age_chart");
-}
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
 
-function addBar(data,element) {
-     var height = 220;
-     var width = 480;
-     nv.addGraph(function() {
-        var chart = nv.models.discreteBarChart()
-            .x(function(d) { return d.label })
-            .y(function(d) { return d.value })
-            .staggerLabels(false)
-            //.staggerLabels(historicalBarChart[0].values.length > 8)
-            .valueFormat(d3.format(".0f"))
-            .tooltips(false)
-            .showValues(true)
-            .valueFormat(d3.format(".0%"))
-            .duration(250)
-	    .color(["#1F77B4"])
-            .width(width)
-            .height(height);
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");
 
-        chart.yAxis
-	     .tickFormat(d3.format(".0%"));
+var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-10, 0])
+  .html(function(d) {
+    return "<strong>"+ d.country +":</strong> <span style='color:#fff'>" + d.frequency + "</span>";
+  })
 
-        d3.select('#' + element)
-            .datum(data)
-            .call(chart);
+var svg = d3.select("#chart1").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        nv.utils.windowResize(chart.update);
-        return chart;
-    });
-}
+svg.call(tip);
 
-function religionChart() {
-	var data = [
-	{
-		"key": "Series 1",
-			"color": "#1F77B4",
-			"values": [
-			{ 
-				"label" : "Christian" ,
-				"value" : 0
-			} , 
-			{ 
-				"label" : "Other" ,
-				"value" : 0
-			},
-			{ 
-				"label" : "No religion" ,
-				"value" : 0.50
-			} , 
-			{ 
-				"label" : "Prefer not to say" ,
-				"value" : 0.50
-			}
-		]
-	}
-	];
-	addHorizontal(data,'religion_chart');
-}
+d3.tsv("data/tooltip.tsv", type, function(error, data) {
+  x.domain(data.map(function(d) { return d.letter; }));
+  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
 
-function addHorizontal(data,element) {
-  var height = 260;
-  var width = 480;
-  nv.addGraph(function() {
-    var chart = nv.models.multiBarHorizontalChart()
-        .x(function(d) { return d.label })
-        .y(function(d) { return d.value })
-        .margin({top: 30, right: 20, bottom: 50, left: 175})
-        .showValues(true)           //Show bar value next to each bar.
-        .tooltips(true)             //Show tooltips on hover.
-	.showLegend(false)
-        .valueFormat(d3.format(".0%"))
-//        .transitionDuration(350)
-        .showControls(false);        //Allow user to switch between "Grouped" and "Stacked" mode.
-        
-    chart.yAxis
-        .tickFormat(d3.format('.0%'));
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
 
-    d3.select('#' + element)
-        .datum(data)
-        .call(chart);
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 5)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Dataset number");
 
-    nv.utils.windowResize(chart.update);
+  svg.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.letter); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.frequency); })
+      .attr("height", function(d) { return height - y(d.frequency); })
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide)
 
-    return chart;
-  });
-}
-
-function caringChart() {
-	var data = [
-	{
-		"key": "Series 1",
-			"color": "#1F77B4",
-			"values": [
-			{ 
-				"label" : "Yes" ,
-				"value" : 0.30
-			} , 
-			{ 
-				"label" : "No" ,
-				"value" : 0.50
-			} , 
-			{ 
-				"label" : "Prefer not to say" ,
-				"value" : 0.20
-			}
-		]
-	}
-	];
-	addHorizontal(data,'caring_chart');
-}
-
-function disabilityChart() {
-    var data = [
-        {key: "Yes", y: 20},
-        {key: "No", y: 60},
-	{key: "Prefer not to say", y: 20}
-    ];
-    addPie(data,"disability_chart");
-}
-
-function ethnicChart() {
-	var data = [
-	{
-		"key": "Series 1",
-			"color": "#1F77B4",
-			"values": [
-			{ 
-				"label" : "White British" ,
-				"value" : 0.60
-			} , 
-			{ 
-				"label" : "Other" ,
-				"value" : 0.10
-			} , 
-			{ 
-				"label" : "Prefer not to say" ,
-				"value" : 0.30
-			}
-		]
-	}
-	];
-	addHorizontal(data,'ethnic_chart');
-}
-
-function orientationBar() {
-          
-     data = [
-        {
-            key: "Orientation",
-            values: [
-                {
-                    "label" : "Hetrosexual" ,
-                    "value" : 0.60
-                } ,
-                {
-                    "label" : "Gay/Lesbian" ,
-                    "value" : 0.10
-                } ,
-                {
-                    "label" : "Bisexual" ,
-                    "value" : 0.10
-                } ,
-                {
-                    "label" : "Other" ,
-                    "value" : 0
-                } ,
-                {
-                    "label" : "Prefer not to say" ,
-                    "value" : 0.20
-                }
-		
-	    ]
-	}
-     ];
-
-     addBar(data,"sex_chart");
-}
-
-function schoolBar() {
-          
-     data = [
-        {
-            key: "Schooling",
-            values: [
-                {
-                    "label" : "UK State" ,
-                    "value" : 0.40
-                } ,
-                {
-                    "label" : "UK Independent" ,
-                    "value" : 0.20
-                } ,
-                {
-                    "label" : "Non-UK" ,
-                    "value" : 0.20
-                } ,
-                {
-                    "label" : "Prefer not to say" ,
-                    "value" : 0.20
-                }
-	    ]
-	}
-     ];
-
-     addBar(data,"school_chart");
-}
-
-$( document ).ready(function() {
-    var w = window,
-    d = document,
-    e = d.documentElement,
-    g = d.getElementsByTagName('body')[0],
-    x = w.innerWidth || e.clientWidth || g.clientWidth,
-    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-    $('#gender_chart').width(x);
-    $('#gender_chart').height(y);
-	genderChart();
-//	ageBar();	
-//	religionChart();
-//	caringChart();
-//	disabilityChart();
-//	ethnicChart();
-//	orientationBar();
-//	schoolBar();
 });
+});
+function type(d) {
+  d.frequency = +d.frequency;
+  return d;
+}
+
