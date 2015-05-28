@@ -46,9 +46,9 @@
         "instruction": "",
         "_setCompletionOn":"ended",
         "_media": {
-            "mp4": "course/en/video/sponge_placeholder.mp4",
-            "ogv": "course/en/video/sponge_placeholder.ogv",
-            "poster": "course/en/video/sponge_placeholder-large.png"
+            "mp4": "course/en/video/ellen.mp4",
+            "ogv": "",
+            "poster": "course/en/video/ellen.jpg"
         },
         "_pageLevelProgress": {
             "_isEnabled": true
