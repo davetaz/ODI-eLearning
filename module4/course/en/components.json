@@ -34,25 +34,28 @@
         }
     },
     {
-        "_id":"c-11",
-        "_parentId":"b-10",
-        "_type":"component",
-        "_component":"media",
-        "_classes":"",
-        "_layout":"full",
+	"_id":"c-11",
+	"_parentId":"b-10",
+	"_type":"component",
+	"_component":"responsiveIframe",
+	"_classes":"",
+	"_layout":"full",
         "title":"Simplifying open data licences – in two minutes",
         "displayTitle": "Simplifying open data licences – in two minutes",
         "body": "The ODI’s Ellen Broad explains why we need open data licences, how they help unlock the value of data and best practice in choosing the right type of licence.",
         "instruction": "",
         "_setCompletionOn":"ended",
-        "_media": {
-            "mp4": "course/en/video/ellen.mp4",
-            "ogv": "",
-            "poster": "course/en/video/ellen.jpg"
-        },
-        "_pageLevelProgress": {
-            "_isEnabled": true
-        }
+	"_source": "https://player.vimeo.com/video/129116798",
+	"_width": {
+		"_small" : 300,
+		"_medium" : 500,
+		"_large" : 905
+	},
+	"_height": {
+		"_small" : 250,
+		"_medium" : 350,
+		"_large" : 508
+	}
     },
     {
         "_id":"c-21",
